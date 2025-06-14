@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuisioner UX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Kuisioner Pengalaman Pengguna (UX)</h1></header>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="materi.html">Materi</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="kuisioner.html" class="active">Kuisioner UX</a>
+  </nav>
+
+  <main>
+    <form 
+      id="kuisionerForm"
+      action="https://script.google.com/macros/s/AKfycbx8eJkLtWLnWn4xAwq-iXOMdK-phbhYfUqUeJ97VqS9ZNKNY8Fa_qKE_-kiSMwy9u1BkA/exec"
+      method="POST"
+    >
+
+      <div class="question">
+        <label for="nama">Nama Anda:</label>
+        <input type="text" name="entry.1497559272" id="nama" placeholder="Masukkan nama Anda" required />
+      </div>
+
+      <div class="question">
+        <label for="q1">1. Seberapa mudah website ini digunakan?</label>
+        <select name="q1" id="q1" required>
+          <option value="" disabled selected>Pilih rating 1–10</option>
+          <option value="1">1 - Sangat sulit</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 - Biasa saja</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 - Sangat mudah</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q2">2. Seberapa menarik tampilannya?</label>
+        <select name="q2" id="q2" required>
+          <option value="" disabled selected>Pilih rating 1–10</option>
+          <option value="1">1 - Sangat membosankan</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 - Netral</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 - Sangat menarik</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q3">3. Seberapa cepat halaman dimuat?</label>
+        <select name="q3" id="q3" required>
+          <option value="" disabled selected>Pilih rating 1–10</option>
+          <option value="1">1 - Sangat lambat</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 - Cukup</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 - Sangat cepat</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="saran">4. Saran Anda:</label>
+        <textarea name="saran" id="saran" rows="3" placeholder="Tulis saran Anda di sini..." required></textarea>
+      </div>
+
+      <button type="submit">Kirim Kuisioner</button>
+    </form>
+    <div id="thankyou-message" class="hidden" style="text-align:center; margin-top:24px;">
+      <h2>Terima kasih telah mengisi kuisioner ini!</h2>
+    </div>
+  </main>
+  <script>
+    const form = document.getElementById('kuisionerForm');
+    const thankyou = document.getElementById('thankyou-message');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      }).then(() => {
+        form.style.display = 'none';
+        thankyou.classList.remove('hidden');
+      }).catch(() => {
+        form.style.display = 'none';
+        thankyou.innerHTML = "<h2>Terima kasih telah mengisi kuisioner ini!</h2>";
+        thankyou.classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

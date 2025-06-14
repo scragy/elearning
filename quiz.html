@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz E-Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Quiz Interaktif</h1></header>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="materi.html">Materi</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="kuisioner.html">Kuisioner UX</a>
+  </nav>
+  <main>
+    <form id="quizForm">
+      
+      <div class="question">
+        <p>1. Apa kepanjangan dari WWW?</p>
+        <label><input type="radio" name="q1" value="a"> a. World Wide Web</label>
+        <label><input type="radio" name="q1" value="b"> b. Web World Wide</label>
+        <label><input type="radio" name="q1" value="c"> c. Wide Web World</label>
+        <label><input type="radio" name="q1" value="d"> d. Web With World</label>
+      </div>
+
+      <div class="question">
+        <p>2. Apa fungsi utama dari Google?</p>
+        <label><input type="radio" name="q2" value="a"> a. Mengedit video</label>
+        <label><input type="radio" name="q2" value="b"> b. Mencari informasi di internet</label>
+        <label><input type="radio" name="q2" value="c"> c. Mengirim paket</label>
+        <label><input type="radio" name="q2" value="d"> d. Menonton televisi</label>
+      </div>
+
+      <div class="question">
+        <p>3. Aplikasi Zoom digunakan untuk?</p>
+        <label><input type="radio" name="q3" value="a"> a. Bermain game</label>
+        <label><input type="radio" name="q3" value="b"> b. Mengedit foto</label>
+        <label><input type="radio" name="q3" value="c"> c. Menonton film</label>
+        <label><input type="radio" name="q3" value="d"> d. Video conference / rapat online</label>
+      </div>
+
+      <div class="question">
+        <p>4. Mana yang merupakan contoh browser?</p>
+        <label><input type="radio" name="q4" value="a"> a. WhatsApp</label>
+        <label><input type="radio" name="q4" value="b"> b. Google Chrome</label>
+        <label><input type="radio" name="q4" value="c"> c. Microsoft Word</label>
+        <label><input type="radio" name="q4" value="d"> d. Canva</label>
+      </div>
+
+      <div class="question">
+        <p>5. Apa fungsi tombol refresh di browser?</p>
+        <label><input type="radio" name="q5" value="a"> a. Membuka tab baru</label>
+        <label><input type="radio" name="q5" value="b"> b. Memuat ulang halaman</label>
+        <label><input type="radio" name="q5" value="c"> c. Menutup browser</label>
+        <label><input type="radio" name="q5" value="d"> d. Menyalakan komputer</label>
+      </div>
+
+      <button type="submit">Kirim Jawaban</button>
+    </form>
+
+    <div id="quizResult" class="hidden">
+      <h2>Terima kasih telah mengerjakan quiz!</h2>
+      <p>Silakan lanjut ke <a href="kuisioner.html">Kuisioner UX</a>.</p>
+    </div>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
